@@ -8,11 +8,6 @@ const puppeteer = require('puppeteer');
 
     const page = await browser.newPage();
     
-    await page.setViewport({
-        width: 1000,
-        height: 500
-    })
-    
     const credentials = {
 
         email: "email.example@gmail.com",
@@ -42,7 +37,8 @@ const puppeteer = require('puppeteer');
         }, 
             "#header-refresh-button"
         );
-        console.log("Atualizando o Looker... " + new Date())
+        
+        console.log("Updating dashboard... " + new Date())
     }, 60000)
 
 })();

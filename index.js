@@ -15,12 +15,12 @@ const puppeteer = require('puppeteer');
     
     const credentials = {
 
-        email: "matheus.vieira@cittatelecom.net.br",
-        password: "favelinha23"
+        email: "email.example@gmail.com",
+        password: "password"
 
     }
 
-    await page.goto("https://accounts.google.com/InteractiveLogin/identifier?continue=https%3A%2F%2Flookerstudio.google.com%2F%3Frequirelogin%3D1&followup=https%3A%2F%2Flookerstudio.google.com%2F%3Frequirelogin%3D1&ltmpl=datastudio&passive=1209600&ifkv=AeDOFXiCpjgiMXQEkRLYMOWF8D0OcOJXhAqhHIhGMtNPqiuhOeg0ukQnkwQpnAibtbO4AGTBrfT-uQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin")
+    await page.goto("https://accounts.google.com/")
     await page.type('[name=identifier]', credentials.email)
     page.keyboard.press('Enter')
 
@@ -30,7 +30,7 @@ const puppeteer = require('puppeteer');
     page.keyboard.press('Enter')
 
     await page.waitForSelector('input[type="search"]')
-    await page.goto('https://lookerstudio.google.com/reporting/1bdac17a-634d-494f-9baa-8f612c0ac36c/page/egCED')
+    await page.goto('urlLookerStudioDashboard')
     await page.waitForSelector('#more-options-header-menu-button')
     
     setInterval(()=>{
